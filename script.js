@@ -51,6 +51,9 @@ const typeController = (e) => {
   // check if given question text is equal to user typed text
   if (questionText === userText) {
     gameOver();
+    // setTimeout(function () {
+    //   window.location.reload();
+    // }, 5000);
   }
 };
 
@@ -112,9 +115,9 @@ const start = () => {
     // finished timer
     if (count == 0) {
       // -------------- START TYPING -----------------
-      countdownOverlay.remove();
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
+      countdownOverlay.style.display = "none";
+      countdownOverlay.textContent = "";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
